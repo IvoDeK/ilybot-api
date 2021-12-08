@@ -9,6 +9,8 @@
 	- [Resources](#Resources-needed-for-this-project)
 	- [Target platform](#Target-platform)
 	- [Technical information](#Technical-information)
+	- [Flowchart](#flowchart)
+	- [Code Information](#code-info)
 
 ## Information
 ### General concept
@@ -31,9 +33,8 @@ The Idea was to make this project on a website so people can access their public
 	- A frontend for a enduser that doesn't know how to interpret the data
 - Could have:
 	- An image output for the rank
-	- Login with Discord
 - Won't have:
-	- 
+	- Login with Discord
 
 ### Website interface
 
@@ -66,6 +67,10 @@ Both are also able to show the top 10 users of all my data. The top 10 is calcul
 ### Website sitemap
 
 ![Sitemap](./Assets/sitemap.png)
+
+### Flowchart
+The basics of how the interaction will be with either the url bar ot the web interface
+![Flowchart](./Assets/flowchart.png)
 
 ## Technical design
 
@@ -105,4 +110,3 @@ Django ver 3.2 LTS
 
 **DataHandler**
 - Format and interpret the data gotten from the DataGrabber class and send it 
-
