@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Files automatically made by Apple
+.DS_Store
+
+# Editor cache directory
+.vs/
+.idea/
