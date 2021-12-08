@@ -109,4 +109,4 @@ Django ver 3.2 LTS
 - Grabs data from the database to create a top 10 and caches it for 10 mins after
 
 **DataHandler**
-- Format and interpret the data gotten from the DataGrabber class and send it 
+- Format and interpret the data gotten from the DataGrabber class and send it to the WebConnectorClass
