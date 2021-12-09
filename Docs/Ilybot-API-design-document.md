@@ -3,6 +3,9 @@
 	- [General concept](#General-concept)
 - [Functional design](#Functional-design)
 	- [Functionalities](#Functionalities)
+	- [MoSCoW](#MoSCoW)
+	- [Use case diagram](#Use-case-diagram)
+	- [Use case description](#Use-case-description)
 	- [Website interface](#Website-interface)
 	- [Website flowchart](#Website-flowchart)
 - [Techincal Design](#Technical-design)
@@ -11,6 +14,7 @@
 	- [Technical information](#Technical-information)
 	- [Flowchart](#flowchart)
 	- [Code Information](#code-info)
+	- [Rational datamodel](#Rational-datamodel)
 
 ## Information
 ### General concept
@@ -33,8 +37,21 @@ The Idea was to make this project on a website so people can access their public
 	- A frontend for a enduser that doesn't know how to interpret the data
 - Could have:
 	- An image output for the rank
+	- Currency showcase
 - Won't have:
 	- Login with Discord
+
+### Use case diagram
+![UseCaseDiagram](./Assets/useCaseDiagram.png)
+
+### Use case description 
+| Name | Ilybot API |
+| :--- | --- |
+| Actors | User<br/>Server |
+| Assumptions | - A device that the user has to visit the website<br/>  - They have an internet connection<br/>  - The actor has a browser<br/>  - Website needs to be online |
+| Desciption | 1. The user goes to the site<br/> 2. The user requests their data<br/> 3. The server recievies the data from the database<br/> 4. The user recieves the information from the server |
+| Exceptions | No exceptions |
+| Result | The user will recieve their data from the database in their webclient |
 
 ### Website interface
 
@@ -86,7 +103,7 @@ All platform should be supported that have an internet connection and an interne
 
 ### Technical information
 #### Code language
-Python 3.10
+Python ver 3.10  
 mySQL
 
 #### Frameworks
@@ -110,3 +127,36 @@ Django ver 3.2 LTS
 
 **DataHandler**
 - Format and interpret the data gotten from the DataGrabber class and send it to the WebConnectorClass
+
+### Rational datamodel
+![Rational Datamodel](./Assets/rationalDatamodel.png)
+
+|  | users |  |
+| --- | :--- | :---: |
+| Defenition | The table is used for finding a user |  |
+| &nbsp;	|	|
+| **Table name** | **Datatype** | **Explenation** |
+| ID | bigint(20) | This is the internal ID for finding other data |
+| discordID | bigint(20) | This is the Discord ID to find them via Discord |
+| premium | tinyint(1) | This variable is to see if the user has premium and can be used when there is a image output |
+| blacklisted | tinyint(1) | See if the user is blacklisted and it will not show their data if true |
+| enableNSFW | tinyint(1) | This is for background renders when images will be enabled |
+| &nbsp;	|	|
+| **Relations** | **Explenation** | |
+| R1 | Connects the user table with the userStats table |
+
+|  | userStats |  |
+| --- | :--- | :---: |
+| Defenition | The table is used to see their stats |  |
+| &nbsp;	|	|
+| **Table name** | **Datatype** | **Explenation** |
+| userID | bigint(20) | This is the internal ID to reference from user table  |
+| exp | bigint(20) | This is the Discord ID to find them via Discord |
+| expCooldown | bigint(20) | This variable is to see if the user has premium and can be used when there is a image output |
+| title | varchar(50) | A title that the user can fill in |
+| description | varchar(50) | Description of a user |
+| rankImageID | bigint(20) | The image ID for the rank command unused in this api |
+| profileImageID | bigint(20) | The image ID for the profile command which can be used for the image render |
+| &nbsp;	|	|
+| **Relations**| **Explenation** | |
+| R1 | Connects the user table with the userStats table |
