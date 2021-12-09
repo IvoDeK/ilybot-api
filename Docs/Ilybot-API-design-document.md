@@ -103,7 +103,7 @@ All platform should be supported that have an internet connection and an interne
 
 ### Technical information
 #### Code language
-Python ver 3.10  
+Python ver 3.9  
 mySQL
 
 #### Frameworks
