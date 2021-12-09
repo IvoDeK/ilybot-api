@@ -134,7 +134,7 @@ Django ver 3.2 LTS
 |  | users |  |
 | --- | :--- | :---: |
 | Defenition | The table is used for finding a user |  |
-| &nbsp;	|	|
+| &nbsp; |	|
 | **Table name** | **Datatype** | **Explenation** |
 | ID | bigint(20) | This is the internal ID for finding other data |
 | discordID | bigint(20) | This is the Discord ID to find them via Discord |
@@ -144,11 +144,12 @@ Django ver 3.2 LTS
 | &nbsp;	|	|
 | **Relations** | **Explenation** | |
 | R1 | Connects the user table with the userStats table |
+&nbsp;
 
 |  | userStats |  |
 | --- | :--- | :---: |
 | Defenition | The table is used to see their stats |  |
-| &nbsp;	|	|
+| &nbsp; |	|
 | **Table name** | **Datatype** | **Explenation** |
 | userID | bigint(20) | This is the internal ID to reference from user table  |
 | exp | bigint(20) | This is the Discord ID to find them via Discord |
