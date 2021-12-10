@@ -97,7 +97,7 @@ The basics of how the interaction will be with either the url bar ot the web int
 ## Technical design
 
 ### Resources needed for this project
-- Developers. (That will code Python and mySQL)
+- Developers. (That will code Python, HTML, CSS and SQL)
 - An code editor for Python like PyCharm or VisualStudioCode.
 - A Laptop/PC.
 - A capable webbrowser like Chrome, Firefox or Safari to test the website.
@@ -109,6 +109,8 @@ All platform should be supported that have an internet connection and an interne
 ### Technical information
 #### Code language
 Python ver 3.10  
+HTML5  
+CSS3  
 SQL
 
 #### Frameworks
@@ -136,14 +138,21 @@ The database is already hosted elsewhere with PHPMyAdmin
 - Gets data from the API view
 	- Asks data from the API
 	- Webfront
-		-  Create the template HTML required for the website
+		-  Create the template HTML with CSS required for the website
+		-  Functionalities to make the website work with the data
+
+**Data view**
+- Gets data from the API view
+	- Asks data from the API
+	- Webfront
+		-  Create the template HTML with CSS required for the website
 		-  Functionalities to make the website work with the data
 
 **Top10 view**
 - Gets the top 10 data from API
 	- Asks for date from API
 	- Webfront
-		-  Create the template HTML required for the website
+		-  Create the template HTML with CSS required for the website
 		-  Functionalities to make the website work with the data
 
 ### Rational datamodel
