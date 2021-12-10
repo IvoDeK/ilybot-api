@@ -1,4 +1,5 @@
 # Index
+Doesn't fully work in the PDF, as it is made [github](https://github.com/IvoDeK/ilybot-api/blob/main/Docs/Ilybot-API-design-document.md) complient  
 - [Information](#Information)
 	- [General concept](#General-concept)
 - [Functional design](#Functional-design)
@@ -19,7 +20,7 @@
 ## Information
 ### General concept
 
-This project will be an API for my bot that is in progress. This will make it possible to get your general statistics from your user ID which can be the ID that my bot created or the ID that you have on Discord. 
+This project will be an API for my Discord bot that is in progress. The Discord bot creates data from usages with the bot. For example you get experience from chatting in Discord where the bot is in. For each message you get a random amount between 5 and 15. By this you can show someone how active you are on Discord. This will make it possible to get your general statistics from your user ID which can be the ID that my bot created or the ID that you have on Discord. 
 The Idea was to make this project on a website so people can access their public data and that there will be an easy website viewer for the end user that doesn't know how to read such data.
 
 ## Functional design
@@ -68,15 +69,19 @@ The other one will shows the end user their data visually.
 Both are also able to show the top 10 users of all my data. The top 10 is calculated from your experience.
 
 #### Wireframe
-**Legenda**
+**Legend**
+
 | Color | function |
 | :-----: | :-----: |
 | Red | Input field |
 | Blue | Button |
 | White | Text fields |
 
-**Main page/data page**
+**Main page**
 ![WireframeMain](./Assets/wireframeMain.png)
+
+**Data page**
+![WireframeData](./Assets/wireframeData.png)
 
 **Top 10 page**
 ![WireframeTop10](./Assets/wireframeTop10.png)
@@ -103,30 +108,42 @@ All platform should be supported that have an internet connection and an interne
 
 ### Technical information
 #### Code language
-Python ver 3.9  
-mySQL
+Python ver 3.10  
+SQL
 
 #### Frameworks
 Django ver 3.2 LTS
 
+#### Server information
+Testing will be done locally
+The server will have a Apache backend with LAMP
+The database is already hosted elsewhere with PHPMyAdmin
+
 ### Code Info
 
-#### Classes
+#### Views
 
-**MainClass**
-- Will start to host the website
-- Recieve all function from a requester
+**API view**
+- Gets data from the actual database
+	- Setup the Database in config files with a user that only has read permissions.
+	- Test connections
+	- Fetch top 10 with queries 
+	- Fetch user by Discord/bot ID with queries
+	- Packs everything into a json so it can be send to end user
 
-**WebConnector**
-- Will send the data required to fill in recipients page
-- Will send what data has been requested to the DataGrabber class
+**Main view**
+- Gets data from the API view
+	- Asks data from the API
+	- Webfront
+		-  Create the template HTML required for the website
+		-  Functionalities to make the website work with the data
 
-**DataGrabber**
-- Grabs data from the database per user
-- Grabs data from the database to create a top 10 and caches it for 10 mins after
-
-**DataHandler**
-- Format and interpret the data gotten from the DataGrabber class and send it to the WebConnectorClass
+**Top10 view**
+- Gets the top 10 data from API
+	- Asks for date from API
+	- Webfront
+		-  Create the template HTML required for the website
+		-  Functionalities to make the website work with the data
 
 ### Rational datamodel
 ![Rational Datamodel](./Assets/rationalDatamodel.png)
@@ -144,7 +161,7 @@ Django ver 3.2 LTS
 | &nbsp;	|	|
 | **Relations** | **Explenation** | |
 | R1 | Connects the user table with the userStats table |
-&nbsp;
+<br/><br/>
 
 |  | userStats |  |
 | --- | :--- | :---: |
