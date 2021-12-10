@@ -1,5 +1,5 @@
 # Index
-Doesn't fully work in the PDF, as it is made [github](https://github.com/IvoDeK/ilybot-api/blob/main/Docs/Ilybot-API-design-document.md) complient  
+Doesn't work in the PDF, as it is made [github](https://github.com/IvoDeK/ilybot-api/blob/main/Docs/Ilybot-API-design-document.md) complient  
 - [Information](#Information)
 	- [General concept](#General-concept)
 - [Functional design](#Functional-design)
@@ -115,6 +115,7 @@ SQL
 Django ver 3.2 LTS
 
 #### Server information
+This doesn't have to be a powerfull server.
 Testing will be done locally
 The server will have a Apache backend with LAMP
 The database is already hosted elsewhere with PHPMyAdmin
